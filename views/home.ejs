@@ -1,0 +1,29 @@
+<%- include( "particals/header"); -%>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/" style="font-size: 30px;">Getting Started</a>
+            <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: end; font-size: 30px;">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Cotact us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1>Home</h1>
+        <%  posts.forEach(post=>{ %>
+            <h2><%= post.title %></h2>
+            <p> 
+                <%= post.content.slice(0,25)+"..." %>
+            <a href="/posts/<%= post._id %>">
+                Read more
+            </a></p>
+
+        <% }) %>
+<%- include("particals/footer") -%>
+    
